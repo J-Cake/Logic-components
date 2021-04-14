@@ -1,0 +1,3 @@
+{
+    "startingComponents": ["$input", "$output", "$and", "$or", "$not"]
+}
