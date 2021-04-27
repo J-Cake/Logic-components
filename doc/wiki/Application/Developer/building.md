@@ -127,4 +127,5 @@ The database is almost identical in layout to the SQLite equivalent, however use
 * Instead of the `text` datatype, use the `citext` type for emails and usernames
 * Use the [`serial`](http://sqlines.com/postgresql/datatypes/serial) datatype for `~ID` columns
 
-The included `/bin/init.sql` file initialises the SQLite database. With the changes mentioned above, this config will correctly configure the Postgres database for use in LogicX
+The included `/bin/init-psql.sql` file initialises the PostgreSQL database. 
+With the changes mentioned above, this config will correctly configure the SQLite database for use in LogicX

@@ -6,7 +6,7 @@ When you first visit LogicX, you'll be greeted with a simple landing page. You'l
 explore different areas of the website. If you haven't already, create an account to get started making and designing
 circuits. After you sign up (or log in, if you've already done this), you should be greeted with your dashboard.
 
-![Page may look different for newer versions](/res/logicx-home.jpeg)
+![Page may look different for newer versions](/res/dashboard.png)
 
 From here, managing documents is a breeze. With a very ominous-looking <icon></icon> button, you can create a document.
 Once you enter the name of your document you will be taken to the *editor* where you believe it or don't, *edit* the
