@@ -17,6 +17,7 @@ standard build-chain tools.
 * [NPM](https://npmjs.com) (Any package manager capable of building native modules works also)
 * [SQLite3](https://npmjs.com/package/sqlite3) *Deprecated*
 * [PostgreSQL](https://www.postgresql.org/) [See installation notes](#PostgreSQL)
+* [RipGrep](https://github.com/BurntSushi/ripgrep) (Optional)
 * [Git](https://git-scm.com) (or any GUI/CLI client capable of cloning repositories)
 * Any directory with full write access (execute access is optional, but recommended)
 
