@@ -60,7 +60,8 @@ manager. Ensure the following commands are executed from within the project.
 2) ```# pnpm install typescript -g```
 3) ```$ pnpx tsc```
 4) ```$ node ./bin/build```
-5) ```$ node ./bin/configuredb.js``` (This is required for configuring an unconfigured SQLite Database. This will not work when using Postgres. [See DB Config section](#database))
+5) ```$ node ./bin/configuredb.js``` (This is required for configuring an unconfigured SQLite Database. This will not
+   work when using Postgres. [See DB Config section](#database))
 6) Set environment variables for Postgres login. [Read More](https://node-postgres.com/features/connecting)
     - `PGUSER`
     - `PGHOST`
@@ -90,25 +91,29 @@ allowing for live-reloading with an HTTP request to [/api/reload-local](http://l
 
 ## Database
 
-Configuring the database is easy enough, just ensure that it is configured correctly with sufficient, but not too generous user access.
+Configuring the database is easy enough, just ensure that it is configured correctly with sufficient, but not too
+generous user access.
 
-To replicate the Database configuration used for [LogicX](https://logicx.jschneiderprojects.com.au/), 
-the database is configured to whitelist a single IP address, which is updated daily via an SSH session to be the public 
-IP of my development machine. The data structures stored in the databases change regularly, hence it is recommended to have access of some sort.
+To replicate the Database configuration used for [LogicX](https://logicx.jschneiderprojects.com.au/), the database is
+configured to whitelist a single IP address, which is updated daily via an SSH session to be the public IP of my
+development machine. The data structures stored in the databases change regularly, hence it is recommended to have
+access of some sort.
 
 To enable TCP access, edit `/etc/postgresql/10/main/postgresql.conf` (you will need SUDO-access for this)
-For an unchanged config file, remove the `#` from line 59 (listen_addresses).
-For the time-being, replace the value in the quotes with an asterisk (*). 
-This can be edited with a script to allow access to specific IPs which I will not post here for security reasons.
+For an unchanged config file, remove the `#` from line 59 (listen_addresses). For the time-being, replace the value in
+the quotes with an asterisk (*). This can be edited with a script to allow access to specific IPs which I will not post
+here for security reasons.
 
 Save and exit the editor.
 
-Edit the file `/etc/postgresql/10/main/pg_hba.conf` (you will also need SUDO-access for this).
-Insert the following lines into the file:
+Edit the file `/etc/postgresql/10/main/pg_hba.conf` (you will also need SUDO-access for this). Insert the following
+lines into the file:
+
 ```
 host    all      all              0.0.0.0/0                    md5
 host    all      all              ::/0                         md5
 ```
+
 Save and exit.
 
 Restart the postgresql server.
@@ -119,13 +124,23 @@ Restart the postgresql server.
 
 > **Warning:** This configuration is dangerous. It exposes the database to the server's TCP interface, allowing any user to attempt to connect to the database.
 > Granted, they will still need the password to make changes, but be warned that there is now a missing layer of security protecting the database.
-> 
+>
 > You should only ever grant TCP-access for development purposes and ensure that the `HOSTS` option only allows **trusted** parties.
 
 ### Layout
 
-The database is almost identical in layout to the SQLite equivalent, however uses some Postgres features for efficiency and reusability reasons.
+The database is almost identical in layout to the SQLite equivalent, however uses some Postgres features for efficiency
+and reusability reasons.
+
 * Instead of the `text` datatype, use the `citext` type for emails and usernames
 * Use the [`serial`](http://sqlines.com/postgresql/datatypes/serial) datatype for `~ID` columns
 
-The included `/bin/init.sql` file initialises the SQLite database. With the changes mentioned above, this config will correctly configure the Postgres database for use in LogicX
+The included `/bin/init.sql` file initialises the SQLite database. With the changes mentioned above, this config will
+correctly configure the Postgres database for use in LogicX
+
+## Extra notes:
+
+* If you're planning on making changes to LogicX, live-reloading can be helpful. Unfortunately, recent changes have
+  broken the native functionality, however it is still possible in Chromium-based browsers. By opening the dev tools and
+  adding the `LogicX` source folder to the locals pane, any changes will cause the page to refresh. The folder is the
+  root folder of LogicX. It may be called Logic.
