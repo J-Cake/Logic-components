@@ -87,7 +87,10 @@ source-maps, and disabling minification.
 
 Similarly, through the `--dev` option to the server (`/build/server/index.js`), the server starts in development mode,
 allowing for live-reloading with an HTTP request to [/api/reload-local](http://localhost:2560/api/reload-local)
-*This is deprecated since the latest refactor*
+
+> *This is deprecated since the latest refactor*.
+>
+> To restore this functionality, add the `LogicX` root directory to the `FileSystem` menu in Chrome DevTools' `Sources` tab. This does not work in non-chromium-based browsers.
 
 ## Database
 
@@ -119,7 +122,7 @@ Save and exit.
 Restart the postgresql server.
 
 ```
-# systemctl systemctl restart postgresql
+# sudo systemctl restart postgresql
 ```
 
 > **Warning:** This configuration is dangerous. It exposes the database to the server's TCP interface, allowing any user to attempt to connect to the database.
@@ -135,12 +138,5 @@ and reusability reasons.
 * Instead of the `text` datatype, use the `citext` type for emails and usernames
 * Use the [`serial`](http://sqlines.com/postgresql/datatypes/serial) datatype for `~ID` columns
 
-The included `/bin/init.sql` file initialises the SQLite database. With the changes mentioned above, this config will
-correctly configure the Postgres database for use in LogicX
-
-## Extra notes:
-
-* If you're planning on making changes to LogicX, live-reloading can be helpful. Unfortunately, recent changes have
-  broken the native functionality, however it is still possible in Chromium-based browsers. By opening the dev tools and
-  adding the `LogicX` source folder to the locals pane, any changes will cause the page to refresh. The folder is the
-  root folder of LogicX. It may be called Logic.
+The included `bin/init-psql.sql` file initialises the database. By executing it on the database, it will be correctly
+configured to use with the application.
