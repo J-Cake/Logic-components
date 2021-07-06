@@ -7,15 +7,15 @@
 
 ## Synopsis:
 
-Member of a larger family of ROM devices. Provides a bitwise signal of a binary file stored on disk.
-8 Bit ROM chip holds 64 bytes of ROM
+Member of a larger family of ROM devices. Provides a bitwise signal of a binary file stored on disk. 8 Bit ROM chip
+holds 64 bytes of ROM
 
 ## Activate
 
-Activating the *ROM* component prompts the user to open a binary file. The contents of the fire are unimportant, as they
-are read as binary and interpreted as a numeric sequence regardless of datatype.
+Activating the *ROM* component prompts the user to open a binary file. Its contents are unimportant, as they are read as
+binary and interpreted as a numeric sequence regardless of datatype.
 
 ## Notes
 
-*Output*s are used throughout LogicX in the same way that *Input*s are. They are vitally important to understanding the
-flow and structure of components.
+Contents of files are stored in the browser's LocalStorage, for faster, reusable access. By creating two ROM components
+of the same label, the contents of the first is overwritten by the second. Ensure no duplicate naming before proceeding. 

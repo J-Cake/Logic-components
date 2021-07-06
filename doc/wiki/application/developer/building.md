@@ -64,8 +64,8 @@ manager. Ensure the following commands are executed from within the project.
    work when using Postgres. [See DB Config section](#database))
 6) Set environment variables for Postgres login. [Read More](https://node-postgres.com/features/connecting)
     - `PGUSER`
-    - `PGHOST`
-    - `PGPASSWORD`
+    - `PGHOST` (Use if not local)
+    - `PGPASSWORD` (Can be accessed through a [keychain]())
     - `PGDATABASE`
     - `PGPORT` (Use if not default)
 7) ```$ node ./build/app/server/index.js --port=2560```

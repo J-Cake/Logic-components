@@ -3,5 +3,5 @@
     "owner": "null",
     "inputLabels": ["Enable", "I0", "I1", "I2", "I3", "I4", "I5", "I6", "I7"],
     "outputLabels": ["O0", "O1", "O2", "O3", "O4", "O5", "O6", "O7"],
-    "component": "/component/src/rom_256b.js"
+    "component": "https://raw.githubusercontent.com/J-Cake/Logic-components/d2b07e4cf53b7e3cf734b7055980c21c5a0dbd86/component-scripts/rom_256b.js"
 }
