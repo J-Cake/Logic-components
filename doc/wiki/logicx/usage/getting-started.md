@@ -2,6 +2,14 @@
 
 > For an introduction to what LogicX is, [see the about page](/wiki/%2FLogicX%2Fabout.md)
 
+## Got a minute? Check out the LogicX Video Tour!
+
+<video width="100%" controls>
+    <source src="/res/getting-started.mp4" type="video/mp4">
+</video>
+
+## Getting Started
+
 When you first visit LogicX, you'll be greeted with a simple landing page. You'll find a list of buttons up top to
 explore different areas of the website. If you haven't already, create an account to get started making and designing
 circuits. After you sign up (or log in, if you've already done this), you should be greeted with your dashboard.

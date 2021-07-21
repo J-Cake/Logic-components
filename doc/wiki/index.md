@@ -2,6 +2,8 @@
 
 Welcome to the LogicX Wiki. Here you can find most of what you will be looking for relating to the technical aspects of the application, Interface, Usage, or other related info.
 
+If you'd like to jump right on in, [head here to get started](/wiki/LogicX/usage/getting-started.md)
+
 ## FAQ
 
 ### What actually is LogicX?
