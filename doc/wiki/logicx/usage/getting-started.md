@@ -5,7 +5,7 @@
 ## Got a minute? Check out the LogicX Video Tour!
 
 <video width="100%" controls>
-    <source src="/res/getting-started.mp4" type="video/mp4">
+    <source src="/res/video/getting-started.mp4" type="video/mp4">
 </video>
 
 ## Getting Started
